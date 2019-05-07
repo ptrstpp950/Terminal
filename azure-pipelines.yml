@@ -17,12 +17,14 @@ variables:
 steps:
 - checkout: self
   submodules: true
-
-- task: CmdLine@2
-  inputs:
-    script: 'dir "d:\a\Nuget\dep\packages"'
     
 - task: NuGetToolInstaller@0
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'dep/packages/'
+    Contents: '**'
+    TargetFolder: 'Nuget/dep/packages/'
 
 - task: NuGetCommand@2
   inputs:
