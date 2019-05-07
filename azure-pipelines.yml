@@ -37,7 +37,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    platform: 'x86'
+    platform: 'x64'
     configuration: 'Debug'
 
 - task: VSTest@2
