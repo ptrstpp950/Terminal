@@ -24,7 +24,7 @@ steps:
   inputs:
     SourceFolder: 'dep/packages/'
     Contents: '**'
-    TargetFolder: '($Build.Repository.LocalPath)/../Nuget/dep/packages/'
+    TargetFolder: 'd:\a\1\Nuget\dep\packages\'
 
 - task: NuGetCommand@2
   inputs:
