@@ -44,3 +44,8 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: 'D:\a\1\s\\bin\Win32\Release\'
+    artifactName: drop
