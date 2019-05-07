@@ -20,7 +20,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'dir "d:\\a\\Nuget\\dep\\packages"'
+    script: 'dir "d:\a\Nuget\dep\packages"'
     
 - task: NuGetToolInstaller@0
 
