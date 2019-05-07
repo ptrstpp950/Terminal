@@ -37,7 +37,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: 'OpenConsole.sln'
-    platform: 'x86'
+    platform: 'x64'
     configuration: 'Release'
 
 - task: VSTest@2
