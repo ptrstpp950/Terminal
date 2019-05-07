@@ -29,16 +29,16 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
-    restoreSolution: '**/*.sln'
+    restoreSolution: 'OpenConsole.sln'
     feedsToUse: 'config'
     nugetConfigPath: 'NuGet.Config'
     versioningScheme: 'off'
 
 - task: VSBuild@1
   inputs:
-    solution: '$(solution)'
-    platform: 'x64'
-    configuration: 'Debug'
+    solution: 'OpenConsole.sln'
+    platform: 'x86'
+    configuration: 'Release'
 
 - task: VSTest@2
   inputs:
