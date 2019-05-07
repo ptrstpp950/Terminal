@@ -38,7 +38,7 @@ steps:
   inputs:
     solution: '$(solution)'
     platform: 'x86'
-    configuration: 'Release'
+    configuration: 'Debug'
 
 - task: VSTest@2
   inputs:
