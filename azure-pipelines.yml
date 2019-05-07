@@ -24,11 +24,12 @@ steps:
   inputs:
     SourceFolder: 'dep/packages/'
     Contents: '**'
-    TargetFolder: 'Nuget/dep/packages/'
+    TargetFolder: '($Build.Repository.LocalPath)/../Nuget/dep/packages/'
 
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
+    restoreDirectory: '$(Build.Repository.LocalPath)/NuGet'
     restoreSolution: '**/*.sln'
     feedsToUse: 'config'
     nugetConfigPath: 'NuGet.Config'
