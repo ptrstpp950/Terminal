@@ -24,12 +24,11 @@ steps:
   inputs:
     SourceFolder: 'dep/packages/'
     Contents: '**'
-    TargetFolder: 'd:\a\1\Nuget\dep\packages\'
+    TargetFolder: '$(Agent.BuildDirectory)/Nuget/dep/packages/'
 
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
-    restoreDirectory: '$(Build.Repository.LocalPath)/NuGet'
     restoreSolution: '**/*.sln'
     feedsToUse: 'config'
     nugetConfigPath: 'NuGet.Config'
@@ -38,8 +37,6 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
   inputs:
